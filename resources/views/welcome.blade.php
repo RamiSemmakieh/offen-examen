@@ -60,6 +60,10 @@
                 Welcome to My Application
             </div>
 
+            @auth
+            <p class="lead">Hello, {{ Auth::user()->name }}!</p>
+            @endauth
+
             <div class="links">
                 <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
                 @auth

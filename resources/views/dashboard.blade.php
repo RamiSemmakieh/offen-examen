@@ -96,6 +96,14 @@
                     <a href="{{ route('courses.create') }}" class="btn btn-success">Create Course</a>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Profile</h4>
+                </div>
+                <div class="card-body text-center">
+                    <a href="{{ route('profile.edit') }}" class="btn btn-primary">Edit Profile</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>
