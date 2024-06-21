@@ -124,7 +124,7 @@
                         <td class="d-flex action-buttons">
                             <a href="{{ route('results.show', $result->id) }}" class="btn btn-info btn-sm">View</a>
                             <a href="{{ route('results.edit', $result->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('results.destroy', $result->id) }}" method="post">
+                            <form action="{{ route('results.destroy', $result->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this result?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

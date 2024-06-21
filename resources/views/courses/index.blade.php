@@ -46,10 +46,6 @@
             <a href="{{ route('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
         </div>
 
-        <!-- <div class="text-center mt-4">
-            <a href="{{ route('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
-        </div> -->
-
         @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -73,7 +69,7 @@
                         <td class="table-actions">
                             <a href="{{ route('courses.show', $course->id) }}" class="btn btn-info btn-sm">View</a>
                             <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('courses.destroy', $course->id) }}" method="POST">
+                            <form action="{{ route('courses.destroy', $course->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this course?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
