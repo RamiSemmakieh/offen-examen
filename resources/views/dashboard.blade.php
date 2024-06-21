@@ -78,6 +78,10 @@
     <div class="container">
         <h1 class="text-center">Dashboard</h1>
 
+        <div class="text-center">
+            Welcome, {{ Auth::user()->name }}
+        </div>
+
         <div class="row">
             <div class="card">
                 <div class="card-header">
@@ -96,14 +100,16 @@
                     <a href="{{ route('courses.create') }}" class="btn btn-success">Create Course</a>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <h4>Profile</h4>
-                </div>
-                <div class="card-body text-center">
-                    <a href="{{ route('profile.edit') }}" class="btn btn-primary">Edit Profile</a>
-                </div>
-            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ route('profile.edit') }}" class="btn btn-primary">Edit Profile</a>
+
+            <!-- Logout Button -->
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
         </div>
     </div>
 </body>

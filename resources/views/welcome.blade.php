@@ -60,21 +60,23 @@
                 Welcome to My Application
             </div>
 
-            @auth
-            <p class="lead">Hello, {{ Auth::user()->name }}!</p>
-            @endauth
-
             <div class="links">
                 <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
                 @auth
                 <a href="{{ route('results.index') }}" class="btn btn-primary">View Results</a>
                 <a href="{{ route('courses.index') }}" class="btn btn-primary">View Courses</a>
                 <a href="{{ route('courses.create') }}" class="btn btn-success">Create Course</a>
-                @endauth
-                @guest
+                <a href="{{ route('profile.edit') }}" class="btn btn-primary">Edit Profile</a>
+
+                <!-- Logout Button -->
+                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+                @else
                 <a href="{{ route('login') }}" class="btn btn-info">Login</a>
                 <a href="{{ route('register') }}" class="btn btn-info">Register</a>
-                @endguest
+                @endauth
             </div>
         </div>
     </div>
