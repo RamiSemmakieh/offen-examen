@@ -14,7 +14,8 @@ class CourseFactory extends Factory
     {
         return [
             'title' => strtoupper($this->faker->lexify('???')), // Generates a random string of 3 uppercase letters
-            'description' => $this->faker->paragraph,
+            // genrate a random sgrint of 20 words descripe the course name
+            'description' => $this->faker->sentence(20),
         ];
     }
 }

@@ -28,6 +28,7 @@
             background-color: #007bff;
             border-color: #007bff;
             color: #ffffff;
+            /* Ensure the text color is white for better visibility */
         }
 
         .pagination .page-item.disabled .page-link {
@@ -94,7 +95,8 @@
                     <input type="text" name="period" class="form-control" placeholder="Search by Period" value="{{ request('period') }}">
                 </div>
                 <button type="submit" class="btn btn-primary mr-2">Search</button>
-                <a href="{{ route('results.index') }}" class="btn btn-secondary">Clear Search</a>
+                <a href="{{ route('results.index') }}" class="btn btn-secondary mr-2">Clear Search</a>
+                <a href="{{ route('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
             </form>
         </div>
 
